@@ -70,8 +70,8 @@ int main(int argc, char **argv){
 
 	// Checks if M and N from CLA are integers and also not 0
 	for (int i=1; i<3; i++){
-		if (atoi(argv[i]) == 0){
-			printf("ERROR: arguments are not integers\n");
+		if (atoi(argv[i]) <= 0){
+			printf("ERROR: arguments are not integers or are negative\n");
 			printHelp(argv);
 			return 0;
 		}
@@ -131,6 +131,7 @@ int main(int argc, char **argv){
 	// Frees both matrices
 	freeMatrix(mat1,m);
 	freeMatrix(mat2,n);
+	freeMatrix(result,m);
 
 	return 0;
 }
